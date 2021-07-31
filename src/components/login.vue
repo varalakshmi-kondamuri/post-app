@@ -2,8 +2,9 @@
     <div>
         <h1>Login</h1>
         <div>
+            <input class="input" required v-model="name" type="text" placeholder="Name"/> <br/>
+
             <input class="input" required v-model="email" type="email" placeholder="Email"/> <br/>
-            <input class="input" required v-model="password" type="password" placeholder="Password"/> <br/>
             <button class="button" @click="login()" name="login"> Login </button>
             <router-link to="/signUp">signUp</router-link>
         </div>
@@ -20,12 +21,12 @@ export default {
     data(){
         return{
             email:'',
-            password:''
+            name:''
         }
     },
     methods:{
         login(){
-            let result = axios.get(`http://localhost:3000/users?email=${this.email}&password=${this.password}`)
+            let result = axios.get(`http://localhost:3000/users?email=${this.email}&name=${this.name}`)
             if(result.status == 200 && result.data.length>0){
                 localStorage.setItem("userInfo",JSON.stringify(result.data[0]));
                 this.$router.push({name:displayPosts})
