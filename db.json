@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "name": "varalakshmi",
+      "email": "varalakshmi@gmail.com",
+      "password": "vara@123",
+      "id": 1
+    },
+    {
+      "name": "User-1",
+      "email": "user1@gmail.com",
+      "password": "user@123",
+      "id": 2
+    }
+  ],
+
+  "posts":[]
+}
